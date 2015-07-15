@@ -66,3 +66,11 @@ window.addEventListener('load', function(evt) {
         eventPage.getPageDetails(onPageDetailsReceived);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("viewlist").addEventListener("click", viewList);
+});
+
+function viewList() {
+    chrome.tabs.create({ url: "vocablist.html" });
+}
