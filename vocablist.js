@@ -1,7 +1,3 @@
-function deleteItem() {
-    alert("Dewlete");
-}
-
 chrome.storage.local.get({vocab: []}, function (result) {
 
     var rows = [];
