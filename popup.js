@@ -26,6 +26,17 @@ function translateText(text, access_token) {
     if(transReq.status == 200 && transReq.readyState == 4) {
         stopSpinner();
         document.getElementById('translated_text').innerText = JSON.parse(transReq.responseText);
+
+        chrome.storage.local.get({"vocab": []}, function (result) {
+            var vocabresult = result.vocab;
+            vocabresult.push({"english": text, "spanish": JSON.parse(transReq.responseText)});
+
+            chrome.storage.local.set({"vocab": vocabresult}, function() {
+            chrome.storage.local.get({vocab: []}, function (result) {
+                console.log(result)
+            });
+        });
+    });
     }
   }
 
