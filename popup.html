@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <script src="jquery-1.11.3.min.js" ></script>
+        <script src="bootstrap-3.3.5-dist//js/bootstrap.min.js"></script>
+        <script src="translate.js"></script>
+        <script src="popup.js"></script>
+
         <style>
-            body {
-                width: 400px;
-                height: 320px;
+
+            #content {
+                width: 350px;
+                height: 250px;
                 font-family: Arial, sans-serif;
                 font-size: 12px;
                 padding: 10px;
@@ -16,6 +22,12 @@
             }
             input#save {
                 font-weight: bold; width: auto;
+            }
+
+            .full-width-btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
             }
 
             .glyphicon-refresh-animate {
@@ -32,21 +44,32 @@
                 from { transform: scale(1) rotate(0deg);}
                 to { transform: scale(1) rotate(360deg);}
             }
+
         </style>
-        <script src="translate.js"></script>
-        <script src="popup.js"></script>
     </head>
     <body>
-        <h4>Selected Text</h4>
-        <p id="selected_text" />
-        <br/>
-        <hr/>
-        <h4>Translated Text</h4>
-        <p id="translated_text"/>
-        <p><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate" id="loader" display="hidden"></span></p>
-        <hr/>
-        <button type="button" class="btn btn-default btn" id="viewlist">
-            <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> View Vocab List
-        </button>
+
+        <div class="container">
+
+            <div id="content">
+                <h4>Selected Text</h4>
+                <p id="selected_text" />
+                <br/>
+                <hr/>
+                <h4>Translated Text</h4>
+                <p id="translated_text"/>
+                <p><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate" id="loader" display="hidden"></span></p>
+                <hr/>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <button align="center" type="button" class="btn btn-default btn full-width-btn" id="viewlist">
+                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> View Vocab List
+                </button>
+            </div>
+        </footer>
+
     </body>
 </html>
