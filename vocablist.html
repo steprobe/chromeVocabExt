@@ -2,41 +2,40 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+        <script src="jquery-1.11.3.min.js" ></script>
+        <script src="vocablist.js" ></script>
+
         <style>
             body {
-                width: 400px;
-                height: 320px;
                 font-family: Arial, sans-serif;
                 font-size: 12px;
-                padding: 10px;
-                margin-bottom: 20px;
-            }
-            input, textarea {
-                width: 420px;
-            }
-            input#save {
-                font-weight: bold; width: auto;
             }
 
-            .glyphicon-refresh-animate {
-                -animation: spin .7s infinite linear;
-                -webkit-animation: spin2 .7s infinite linear;
+            td {
+                valign: middle;
             }
 
-            @-webkit-keyframes spin2 {
-                from { -webkit-transform: rotate(0deg);}
-                to { -webkit-transform: rotate(360deg);}
-            }
-
-            @keyframes spin {
-                from { transform: scale(1) rotate(0deg);}
-                to { transform: scale(1) rotate(360deg);}
-            }
         </style>
-        <script src="popup.js"></script>
+
     </head>
     <body>
-        <h4>Vocabulary List</h4>
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>Vocabulary List</h4><br/>
+
+                    <table id="vocab_table" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>English</th>
+                            <th>Spanish</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                    </table>
+            </div>
+        </div>
+
+
     </body>
 </html>

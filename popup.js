@@ -32,9 +32,6 @@ function translateText(text, access_token) {
             vocabresult.push({"english": text, "spanish": JSON.parse(transReq.responseText)});
 
             chrome.storage.local.set({"vocab": vocabresult}, function() {
-            chrome.storage.local.get({vocab: []}, function (result) {
-                console.log(result)
-            });
         });
     });
     }
