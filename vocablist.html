@@ -2,9 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
-        <script src="jquery-1.11.3.min.js" ></script>
-        <script src="vocablist.js" ></script>
+        <script type='text/javascript' src="jquery-1.11.3.min.js" ></script>
 
         <style>
             body {
@@ -12,8 +10,12 @@
                 font-size: 12px;
             }
 
-            td {
-                valign: middle;
+            .table tbody>tr>td.vert-align {
+                vertical-align: middle;
+            }
+
+            .table tbody>tr>td.horz-align {
+                text-align: center;
             }
 
         </style>
@@ -24,18 +26,32 @@
             <div class="col-md-8 col-md-offset-2">
                 <h4>Vocabulary List</h4><br/>
 
-                    <table id="vocab_table" class="table table-bordered table-striped">
-                        <thead>
-                          <tr>
-                            <th>English</th>
-                            <th>Spanish</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                    </table>
+                <table id="vocab_table" class="table table-bordered table-striped"  data-sbind="visible: true">
+                    <thead>
+                      <tr>
+                        <th>English</th>
+                        <th>Spanish</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody data-sbind="foreach: vocab">
+                        <tr>
+                            <td class="col-md-3 vert-align" data-sbind="text: english"></td>
+                            <td class="col-md-3 vert-align" data-sbind="text: spanish"></td>
+                            <td class="col-md-1 vert-align horz-align" >
+                                <button class="btn btn-default" data-sbind='click: $root.removeVocab'>
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
+        <script type='text/javascript' src='knockout.js'></script>
+        <script type='text/javascript' src='knockout-secure-binding.min.js'></script>
+        <script type='text/javascript' src="vocablist.js" ></script>
 
     </body>
 </html>
