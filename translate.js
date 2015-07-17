@@ -1,5 +1,7 @@
 function getTokenAndTranslate(text) {
 
+  console.log("Translatig " + text)
+
   var clientId = "steprobe_vocab"
   var clientSecret = "__________drogheda82"       //Not making this public
 
@@ -28,7 +30,7 @@ function translateText(text, access_token) {
 
         chrome.storage.local.get({"vocab": []}, function (result) {
             var vocabresult = result.vocab;
-            vocabresult.push({"english": text, "spanish": JSON.parse(transReq.responseText)});
+            vocabresult.push({"source": JSON.parse(transReq.responseText), "dest": text });
 
             chrome.storage.local.set({"vocab": vocabresult}, function() {
             });

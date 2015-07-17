@@ -26,7 +26,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <h4>Vocabulary List</h4><br/>
 
-                <table id="vocab_table" class="table table-bordered table-striped"  data-sbind="visible: true">
+                <table id="vocab_table" class="table table-bordered table-condensed table-striped"  data-sbind="visible: true">
                     <thead>
                       <tr>
                         <th>English</th>
@@ -36,10 +36,10 @@
                     </thead>
                     <tbody data-sbind="foreach: vocab">
                         <tr>
-                            <td class="col-md-3 vert-align" data-sbind="text: english"></td>
-                            <td class="col-md-3 vert-align" data-sbind="text: spanish"></td>
+                            <td class="col-md-3 vert-align" data-sbind="text: source"></td>
+                            <td class="col-md-3 vert-align" data-sbind="text: dest"></td>
                             <td class="col-md-1 vert-align horz-align" >
-                                <button class="btn btn-default" data-sbind='click: $root.removeVocab'>
+                                <button class="btn btn-xs btn-default" data-sbind='click: $root.removeVocab'>
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>
                             </td>
